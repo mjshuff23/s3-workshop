@@ -8,9 +8,7 @@ function App() {
     // get secure url from server
     const res = await fetch('http://localhost:8080/s3Url');
     if (res.ok) {
-      console.log(res);
       const { url } = await res.json();
-      console.log(url);
 
       // post directly to the s3 bucket
       await fetch(url, {

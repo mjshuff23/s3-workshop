@@ -8,7 +8,6 @@ app.use(cors());
 app.use(express.static('frontend'));
 
 app.get('/s3Url', async (req, res) => {
-  console.log('TEST');
   const url = await generateUploadURL();
   res.send({ url });
 });
