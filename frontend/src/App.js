@@ -6,6 +6,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // get secure url from server
+    console.log(file);
     const res = await fetch('http://localhost:8080/s3Url');
     if (res.ok) {
       const { url } = await res.json();
