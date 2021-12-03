@@ -5,10 +5,12 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // get secure url from server
+
+    // Grab the file extension for our key
     const fileName = file.name.split('.');
     const fileExtension = fileName[fileName.length - 1];
-    console.log(fileExtension);
+
+    // get secure url from server
     const res = await fetch('http://localhost:8080/s3Url', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -27,19 +29,16 @@ function App() {
         body: file,
       });
 
+      // Grab the URL for our image
       const imageUrl = url.split('?')[0];
-      console.log(imageUrl);
+      // console.log(imageUrl);
 
-      // post request to my server to store any extra data
+      // Append our new image to the page
       const img = document.createElement('img');
       img.src = imageUrl;
       document.body.appendChild(img);
     }
   };
-
-  // const showFileChange = (e) => {
-  //   console.dir(e.target.files[0]);
-  // };
 
   return (
     <form id='imageForm' onSubmit={handleSubmit}>
