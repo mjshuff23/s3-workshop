@@ -2,7 +2,6 @@ import dotenv from 'dotenv';
 import AWS from 'aws-sdk';
 import crypto from 'crypto';
 import { promisify } from 'util';
-import { access } from 'fs';
 const randomBytes = promisify(crypto.randomBytes);
 
 dotenv.config();
