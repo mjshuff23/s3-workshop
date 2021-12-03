@@ -36,7 +36,7 @@ function App() {
       // Append our new image to the page
       const img = document.createElement('img');
       img.src = imageUrl;
-      document.body.appendChild(img);
+      document.getElementById('root').appendChild(img);
     }
   };
 
