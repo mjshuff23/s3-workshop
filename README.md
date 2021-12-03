@@ -12,3 +12,4 @@
    - [Getting Uour Security Credentials](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-your-credentials.html)
 - After getting and downloading your security credentials, you will need to create a file called `credentials` and put it in the directory `~/.aws/`.  The AWS SDK will scan this folder to find your credentials.
    - [Loading Credentials in Node.js from the Shared Credentials File](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-shared.html)
+- At this point, whenever you use the AWS SDK, it will attempt to scan that folder and pull your credentials

@@ -6,8 +6,15 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // get secure url from server
-    console.log(file);
-    const res = await fetch('http://localhost:8080/s3Url');
+    const fileName = file.name.split('.');
+    const fileExtension = fileName[fileName.length - 1];
+    console.log(fileExtension);
+    const res = await fetch('http://localhost:8080/s3Url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fileExtension }),
+    });
+
     if (res.ok) {
       const { url } = await res.json();
 
